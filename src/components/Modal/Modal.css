@@ -1,0 +1,130 @@
+.modalBG {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  background-color: #fefefe;
+  margin: 5% auto;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 940px;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.modalBG.show {
+  opacity: 1;
+  z-index: 9999;
+}
+
+.modalContent.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modalHeader {
+  position: relative ;
+  top: 0 ;
+  right: 0 ;
+  display: flex ;
+  justify-content: space-between ;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modalHeader h5 {
+  font-weight: 500;
+  color: #2c2c2c;
+  text-align: center;
+  font-size: 22px;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.closeModal {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  opacity: 0.5;
+  border: none;
+  background-color: white;
+  padding: 0;
+}
+
+.closeModal span {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.modalBody {
+  padding: 20px 0;
+}
+
+.modalFooter {
+  border-top: 0;
+  padding: 12px;
+  padding-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.shopDetailsTable {
+  text-align: start;
+  display: block;
+  overflow-x: auto;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.shopDetailsTable th {
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #ececec;
+  padding: 10px 15px;
+}
+
+.shopDetailsTable th:nth-child(1) {
+  width: 20%;
+}
+.shopDetailsTable th:nth-child(2) {
+  width: 40%;
+}
+.shopDetailsTable th:nth-child(3) {
+  width: 20%;
+}
+.shopDetailsTable th:nth-child(4) {
+  width: 20%;
+}
+
+.shopDetailsTable td {
+  line-height: 1.8;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #ececec;
+  padding: 10px 15px;
+}
+
+.shopSelectButton {
+  border: none;
+  height: 35px;
+  background-color: #fcd600;
+  color: #212529;
+  font-size: 14px;
+  font-weight: 600;
+}

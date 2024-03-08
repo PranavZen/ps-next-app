@@ -1,0 +1,39 @@
+.ourShops {
+    width: 100%;
+    padding-top: 110px;
+    overflow: hidden;
+  }
+  
+  .ourShops h3 {
+    color: #000000;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #6da255;
+  }
+  
+  .ourShops ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0 0;
+  }
+  
+  .ourShops ul li {
+    margin-bottom: 30px;
+    font-size: 18px;
+    text-align: center; 
+    list-style: none;
+  }
+  
+  .ourShops ul li a {
+    color: rgb(68, 68, 68);
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
