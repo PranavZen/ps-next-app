@@ -53,8 +53,7 @@ function Header() {
         </div>
         <div className="floatRight">
           <div className="about">
-            <a href="#" className="mr-5">About Us</a>
-            <a href="#">Demo</a> 
+            <a href="#">About Us</a>
           </div>
         </div>
       </div>
