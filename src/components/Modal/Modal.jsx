@@ -29,7 +29,7 @@ function Modal({ onClose, item }) {
   function handleSelectLocation() {
     setSelectedStore(item.name);
     setShowModal(false);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "instant" });
   }
 
   useEffect(() => {

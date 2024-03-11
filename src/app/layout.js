@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import { OurStoreProvider } from "@/store/OurStoreContext";
+import '../components/BaseCss/base.css';
 import "../assets/css/bootstrap.min.css";
 export const metadata = {
   title: "Create Next App",

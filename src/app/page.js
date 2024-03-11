@@ -1,16 +1,29 @@
+"use client";
 import HomeSlider from "@/components/HomeSlider/HomeSlider";
-import LeftMenu from "@/components/LeftMenu/LeftMenu";
+import Modal from "@/components/Modal/Modal";
+import OurShops from "@/components/OurShops/OurShops";
+import { useOurStore } from "@/store/OurStoreContext";
+import { useState } from "react";
 
 export default function Home() {
-  // const [isLeftMenuVisible, setLeftMenuVisible] = useState(false);
+  const [modalItem, setModalItem] = useState(null);
+  const { setSelectedStore } = useOurStore();
 
-  // const toggleLeftMenu = () => {
-  //   setLeftMenuVisible(!isLeftMenuVisible);
-  // };
+  const openModal = (item) => {
+    setModalItem(item);
+  };
+
+  const closeModal = () => {
+    setModalItem(null);
+  };
   return (
     <>
       <HomeSlider />
-      {/* {isLeftMenuVisible && <LeftMenu toggleLeftMenu={toggleLeftMenu} />} */}
+
+      <OurShops openModal={openModal} />
+      {modalItem && (
+        <Modal key={modalItem.id} onClose={closeModal} item={modalItem} />
+      )}
     </>
   );
 }
