@@ -27,7 +27,7 @@ function Modal({ onClose, item }) {
   }
 
   function handleSelectLocation() {
-    setSelectedStore(item.name);
+    setSelectedStore(item.name.toUpperCase());
     setShowModal(false);
     window.scrollTo({ top: 0, behavior: "instant" });
   }
