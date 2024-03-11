@@ -14,7 +14,7 @@ function LeftMenu({ toggleLeftMenu }) {
           </div>
           <div className="menuList">
             <ul>
-              <li className="menuTitle">
+              <li>
                 <span>
                   <h4>Menu</h4>
                 </span>

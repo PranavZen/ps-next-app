@@ -77,9 +77,7 @@
 .menuList ul li:first-child{
     border-bottom: 0;
 }
-/* .menuList .menuTitle{
-    border: none;
-} */
+
 .menuList ul li span{
     float: left;
     font-size: 18px;
