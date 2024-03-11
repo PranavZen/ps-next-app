@@ -5,6 +5,7 @@ import logo from "../../assets/punjabsindnewLogo.png";
 import { useOurStore } from "@/store/OurStoreContext";
 import Image from "next/image";
 import LeftMenu from "../LeftMenu/LeftMenu";
+import Link from "next/link";
 
 function Header() {
   const [isLeftMenuVisible, setLeftMenuVisible] = useState(false);
@@ -20,9 +21,9 @@ function Header() {
     <header>
       <div className="header">
         <div className="logo">
-          <a href="https://punjabsind.in">
+          <Link href="/">
             <Image src={logo} alt="Punjab Sind" height={100} width={100} priority/>
-          </a>
+          </Link>
         </div>
         <div className="navigation" onClick={toggleLeftMenu}>
           <span>
