@@ -33,7 +33,7 @@ function Header() {
         </div>
         {isLeftMenuVisible && <LeftMenu toggleLeftMenu={toggleLeftMenu} />}
         <div className="login">
-          <a href="#">rohan</a>
+          <a href="#">Login</a>
         </div>
         <div className="location">
           <button></button>
@@ -53,7 +53,7 @@ function Header() {
         </div>
         <div className="floatRight">
           <div className="about">
-            <a href="#">About Us</a>
+            <a href="#" className="mr-5">About Us</a>
             <a href="#">Demo</a> 
           </div>
         </div>
