@@ -1,0 +1,57 @@
+.topBar{
+    padding: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.locationPin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.locationText{
+    padding-top: 20px;
+}
+.locationText h5{
+    color: #2c2c2c;
+    font-weight: 500;
+    text-align: center;
+}
+.searchLocationDiv{
+    padding: 0 50px;
+    margin-top: 25px;
+}
+.searchBar{
+    position: relative;
+}
+.searchBar input{
+    padding-left: 45px;
+    border-radius: 50px;
+    background-color: rgb(248, 248, 248);
+    width: 100%;
+    border: 1px solid #cecece;
+    color: #2c2c2c;
+    height: 40px;
+}
+.searchBar .searchIcon{
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-top: -5px;
+}
+.searchBar .searchIcon svg{
+    height: 20px;
+    width: 20px;
+}
+.searchBar .searchGo{
+    position: absolute;
+    right: 18px;
+    top: 7px;
+    cursor: pointer;
+}
