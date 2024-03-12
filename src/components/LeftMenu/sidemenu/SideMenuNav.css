@@ -1,0 +1,76 @@
+
+.menuArea{
+    height: 100%;
+    width: 100%;
+}
+.menuHeader{
+    width: 100%;
+    float: left;
+    position: absolute;
+    height: 60px;
+    padding: 0 30px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.menuHeader button {
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: #7e7d7a;
+}
+.menuHeader button:hover{
+    color: #3f3f3d;
+}
+.menuList{
+    width: 100%;
+    float: left;
+    padding: 0px 60px;
+}
+.menuList ul{
+    float: left;
+    width: 100%;
+    height: auto;
+}
+.menuList ul li{
+    float: left;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+    list-style: none;
+    border-bottom: 1px dotted #ccc;
+}
+.menuList ul li:first-child{
+    border-bottom: 0;
+}
+
+.menuList ul li span{
+    float: left;
+    font-size: 18px;
+    font-weight: 400;
+    color: #2c2c2c;
+    line-height: 110%;
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+.menuList ul li span:hover{
+    color: #fdd807;
+}
+.menuList ul li span h4{
+    color: #fdd700;
+}
+.menuList ul li a{
+    float: left;
+    font-size: 20px;
+    font-weight: 400;
+    color: #707070;
+    line-height: 110%;
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+

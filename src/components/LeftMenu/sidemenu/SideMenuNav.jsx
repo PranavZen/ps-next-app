@@ -1,14 +1,9 @@
 import React from "react";
-import { IoCloseSharp } from "react-icons/io5";
+import './SideMenuNav.css';
 
-function SideMenuNav({toggleLeftMenu}) {
+function SideMenuNav() {
   return (
     <div className="menuArea">
-      <div className="menuHeader">
-        <button onClick={toggleLeftMenu}>
-          <IoCloseSharp />
-        </button>
-      </div>
       <div className="menuList">
         <ul>
           <li>

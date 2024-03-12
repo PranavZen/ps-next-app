@@ -1,0 +1,67 @@
+.loginDiv{
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: -50px;
+}
+.topHeading{
+    margin-top: 10px;
+}
+.topHeading span{
+    font-size: 18px;
+    color: #000;
+}
+.numberInputDiv{
+    margin: 3rem 0;
+}
+.numberInputField{
+    background-color: #eee;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}
+.numberInputField span{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    font-weight: 900;
+    color: #000;
+    z-index: 2;
+}
+.numberInputField input{
+    background-color: #eee;
+    border: none;
+    padding: 0 0 0 60px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: #2c2c2c;
+    line-height: 120%;
+    height: 35px;
+}
+.numberInputField input:focus{
+    box-shadow: none;
+    outline: none;
+    color: #495057;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.sendOTP{
+    padding: 8px 12px;
+    border: 1px solid #fdd700;
+    background-color: #fdd700;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

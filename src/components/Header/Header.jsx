@@ -11,16 +11,23 @@ function Header() {
   const [isLeftMenuVisible, setLeftMenuVisible] = useState(false);
 
   const toggleLeftMenu = () => {
-    // alert("Toggle Left Menu");
     setLeftMenuVisible(!isLeftMenuVisible);
   };
   const { selectedStore } = useOurStore();
-  // console.log(selectedStore)
 
   return (
     <header>
       <div className="header">
         <div className="logo">
+          <a href="https://punjabsind.in">
+            <Image
+              src={logo}
+              alt="Punjab Sind"
+              height={100}
+              width={100}
+              priority
+            />
+          </a>
           <Link href="/">
             <Image src={logo} alt="Punjab Sind" height={100} width={100} priority/>
           </Link>
@@ -34,7 +41,7 @@ function Header() {
         </div>
         {isLeftMenuVisible && <LeftMenu toggleLeftMenu={toggleLeftMenu} />}
         <div className="login">
-          <a href="#">Login</a>
+          <a href="#">LOGIN</a>
         </div>
         <div className="location">
           <button></button>
