@@ -2,6 +2,7 @@
 import HomeSlider from "@/components/HomeSlider/HomeSlider";
 import Modal from "@/components/Modal/Modal";
 import OurShops from "@/components/OurShops/OurShops";
+import ShopSearchHeader from "@/components/ShopSearchHeader/ShopSearchHeader";
 import { useOurStore } from "@/store/OurStoreContext";
 import { useState } from "react";
 
@@ -19,6 +20,7 @@ export default function Home() {
   return (
     <>
       <HomeSlider />
+      <ShopSearchHeader/>
 
       <OurShops openModal={openModal} />
       {modalItem && (

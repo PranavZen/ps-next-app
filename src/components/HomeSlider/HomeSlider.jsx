@@ -31,7 +31,7 @@ function HomeSlider() {
       <div className="imageContainer">
         {slides.map((slide, index) => (
           <div key={index} className={index === currIndex ? "slide active" : "slide"}>
-            <Image src={slide} alt="Banner" width={1920} height={590}/>
+            <Image src={slide} alt="Banner" width={1920} height={500}/>
           </div>
         ))}
         <a className="previous" onClick={goToPrevSlide}>

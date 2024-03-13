@@ -16,6 +16,9 @@ function LoginSideBar() {
       <span className="sendOTP">
         SEND OTP
       </span>
+      <div className="newUserReg">
+        <p>New User? <span>REGISTER</span> </p>
+      </div>
     </div>
   )
 }

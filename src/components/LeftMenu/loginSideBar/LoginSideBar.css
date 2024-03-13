@@ -65,3 +65,15 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
     justify-content: center;
 }
+.newUserReg{
+    margin: 20px 0;
+}
+.newUserReg p{
+    color: black;
+    font-weight: 700;
+}
+.newUserReg span{
+    color: #ff3333;
+    font-weight: 800;
+    font-size: 15px;
+}

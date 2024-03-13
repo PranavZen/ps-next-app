@@ -1,0 +1,31 @@
+.location {
+    width: fit-content;
+    position: absolute;
+    top: 6px;
+    left: 190px;
+    display: flex;
+    align-items: center;
+  }
+  .location button {
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+    border: none;
+    height: 45px;
+    width: 45px;
+    background: url(../../assets/location.svg) center center no-repeat;
+  }
+  .location .locSpan {
+    font-size: 16px;
+    width: max-content;
+    color: #2c2c2c;
+    font-weight: 500;
+    border-left: 1px solid #2c2c2c;
+    padding-left: 10px;
+    line-height: 16px;
+    height: 32px;
+    cursor: pointer;
+  }
+  .location span{
+    text-overflow: ellipsis;
+  }

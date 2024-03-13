@@ -1,19 +1,35 @@
-"use client";
-import React, { useState } from "react";
+"use client"
+import React, { useState, useEffect } from "react";
 import "../Header/Header.css";
 import logo from "../../assets/punjabsindnewLogo.png";
 import { useOurStore } from "@/store/OurStoreContext";
 import Image from "next/image";
 import LeftMenu from "../LeftMenu/LeftMenu";
 import Link from "next/link";
+import Location from "../Location/Location";
 
 function Header() {
   const [isLeftMenuVisible, setLeftMenuVisible] = useState(false);
+  const [leftMenuComponent, setLeftMenuComponent] = useState(null);
 
-  const toggleLeftMenu = () => {
+  const toggleLeftMenu = (component) => {
+    setLeftMenuComponent(component);
     setLeftMenuVisible(!isLeftMenuVisible);
   };
+
   const { selectedStore } = useOurStore();
+
+  useEffect(() => {
+    if (isLeftMenuVisible) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isLeftMenuVisible]);
 
   return (
     <header>
@@ -29,33 +45,26 @@ function Header() {
             />
           </Link>
         </div>
-        <div className="navigation" onClick={toggleLeftMenu}>
+        <div
+          className="navigation"
+          onClick={() => toggleLeftMenu("SideMenuNav")}
+        >
           <span>
             <span className="top"></span>
             <span className="middle"></span>
             <span className="bottom"></span>
           </span>
         </div>
-        {isLeftMenuVisible && <LeftMenu toggleLeftMenu={toggleLeftMenu} />}
-        <div className="login">
-          <a href="#">LOGIN</a>
+        {isLeftMenuVisible && (
+          <LeftMenu
+            toggleLeftMenu={toggleLeftMenu}
+            leftMenuComponent={leftMenuComponent}
+          />
+        )}
+        <div className="login" onClick={() => toggleLeftMenu("LoginSideBar")}>
+          <span>LOGIN</span>
         </div>
-        <div className="location">
-          <button></button>
-          <a href="#">
-            <span>
-              {selectedStore ? selectedStore : "Select"}
-              {selectedStore && <br />}
-              {selectedStore && "Mumbai"}
-              {!selectedStore && (
-                <>
-                  <br />
-                  Location
-                </>
-              )}
-            </span>
-          </a>
-        </div>
+        <Location toggleLeftMenu={toggleLeftMenu} />
         <div className="floatRight">
           <div className="about">
             <a href="#">About Us</a>

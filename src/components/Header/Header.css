@@ -80,7 +80,7 @@ header{
   top: 15px;
   cursor: pointer;
 }
-.login a {
+.login span {
     padding: 8px 15px; 
     border: 1px solid #fdd700; 
     font-size: 14px; 
@@ -89,33 +89,7 @@ header{
     color: #2c2c2c;
   }
   
-.location {
-  width: fit-content;
-  position: absolute;
-  top: 6px;
-  left: 190px;
-  display: flex;
-  align-items: center;
-}
-.location button {
-  display: flex;
-  align-items: center;
-  min-height: 30px;
-  border: none;
-  height: 45px;
-  width: 45px;
-  background: url(../../assets/location.svg) center center no-repeat;
-}
-.location a {
-  font-size: 16px;
-  width: max-content;
-  color: #2c2c2c;
-  font-weight: 500;
-  border-left: 1px solid #2c2c2c;
-  padding-left: 10px;
-  line-height: 16px;
-  height: 32px;
-}
+
 
 .floatRight {
   height: 100%;

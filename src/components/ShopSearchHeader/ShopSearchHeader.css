@@ -1,0 +1,32 @@
+.shopSearchHeader{
+    margin-top: 30px;
+    width: 100%;
+    height: 85px;
+    position: sticky;
+    top: 0px;
+    background-color: #fffefac7;
+    z-index: 99;
+    backdrop-filter: saturate(180%) blur(5px);
+}
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 40px;
+    margin: 0 20px;
+    padding-top: 5px;
+}
+.shopHeaderLogo img{
+    margin-top: 8px;
+}
+.headerIconSearch{
+    display: flex;
+}
+.shopHeaderLocation{
+    position: relative;
+    width: 70px;
+}
+.shopHeaderLocation .location{
+    top: 15px;
+    left: 25px;
+}
