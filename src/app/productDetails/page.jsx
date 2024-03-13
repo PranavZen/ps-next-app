@@ -1,6 +1,10 @@
 import Slider from "@/components/syncslider/Slider";
+import '../productDetails/productdetails.css'
 import "../../components/syncslider/slider.css";
 import React from "react";
+import Link from "next/link";
+import { HiOutlineChevronLeft, HiChevronRight } from "react-icons/hi";
+import ProductDataDisplay from "@/components/productcontent/ProductDataDisplay";
 const images = [
   {
     src: "https://media.istockphoto.com/id/1404885250/photo/mahabaleshwar-and-panchagani-nature-and-hill-areas.jpg?s=2048x2048&w=is&k=20&c=Su2wYszfDTThmt7AcCA5OHfGcqFVBxy73W-5YtemT28=",
@@ -32,15 +36,37 @@ function ProductDetails() {
   return (
     <section className="innerPage">
       <div className="container-fluid customWidth">
-        <div className="breadCrumWrap"></div>
+        <div className="breadCrumWrap">
+          <Link href="" className="backBtn btn">
+            <span>
+            <HiOutlineChevronLeft />
+            </span>
+            Back
+          </Link>
+          <div className="pagePathWrap">
+            <span>Home</span>
+            <span>
+              <HiChevronRight />
+            </span>
+            <span>Sweets</span>
+            <span>
+              <HiChevronRight />
+            </span>
+            <span>Khajoor Dry Fruit Barfi</span>
+          </div>
+        </div>
         <div className="bg-light px-5 py-5">
           <div className="row">
             <div className="col-md-6">
               <Slider images={images} />
             </div>
+            <div className="col-md-6">
+              <ProductDataDisplay/>
+            </div>
           </div>
         </div>
       </div>
+      
     </section>
   );
 }

@@ -1,0 +1,48 @@
+.proBtnsWrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.proNameWrap h4 {
+  color: #2c2c2c;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 5px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+.proNameWrap h4 span {
+  font-size: 14px;
+  text-transform: initial;
+}
+.proPriceWrap h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #080606;
+  line-height: 180%;
+}
+.proPriceWrap h5 span {
+  font-weight: 300;
+  font-size: 14px;
+}
+.proPriceWrap h5 svg {
+  font-size: 14px;
+  margin-top: -6px;
+}
+.abtProductWrap {
+  margin-top: 25px;
+}
+.abtProductWrap h6 {
+  color: #2c2c2c;
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.abtProductWrap p {
+  font-size: 16px;
+  color: #080606;
+  margin-bottom: 0;
+  font-weight: 400;
+}

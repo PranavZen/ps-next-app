@@ -72,7 +72,7 @@ outline: none;
 .magnifier {
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 380px;
   display: inline-block;
   cursor: zoom-in;
 }

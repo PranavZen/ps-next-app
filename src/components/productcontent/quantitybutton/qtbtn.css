@@ -1,0 +1,25 @@
+.qtWrap {
+  width: 100px;
+  background: #fcd600;
+  height: 35px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.qtWrap span {
+  display: flex;
+  align-items: center;
+}
+.qtWrap span svg{
+    font-size: 12px;
+}
+.decBnt,
+.incBnt {
+  cursor: pointer;
+}
+.countBox {
+  font-size: 21px;
+  font-family: "Rupee Foradian";
+  color: #2c2c2c;
+}

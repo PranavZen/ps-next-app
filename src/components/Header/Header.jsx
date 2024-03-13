@@ -19,7 +19,7 @@ function Header() {
     <header>
       <div className="header">
         <div className="logo">
-          <a href="https://punjabsind.in">
+          <Link href="/">
             <Image
               src={logo}
               alt="Punjab Sind"
@@ -27,9 +27,6 @@ function Header() {
               width={100}
               priority
             />
-          </a>
-          <Link href="/">
-            <Image src={logo} alt="Punjab Sind" height={100} width={100} priority/>
           </Link>
         </div>
         <div className="navigation" onClick={toggleLeftMenu}>

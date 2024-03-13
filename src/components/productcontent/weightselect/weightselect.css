@@ -1,0 +1,28 @@
+.weightSelectBoxWrap {
+  position: relative;
+}
+.weightSelectBoxWrap select {
+  width: 115px;
+  background: #fcd600;
+  height: 35px;
+  border: 0;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  cursor: pointer;
+  padding-left: 20px;
+  font-family: "Spline Sans";
+  font-size: 18px;
+}
+.downArrow {
+  position: absolute;
+  z-index: 0;
+  right: 15px;
+  top: 5px;
+}
+.weightSelectBoxWrap select:focus {
+  outline: none;
+  box-shadow: none;
+}
