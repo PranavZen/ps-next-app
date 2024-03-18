@@ -9,12 +9,12 @@ const toggleMenuSlice = createSlice({
   reducers: {
     toggleMenuVisible(state) {
       state.isLeftMenuVisible = !state.isLeftMenuVisible;
+      
     },
-    setMenuComponent(state, action) {
+    toggleMenuComp(state, action) {
       state.leftMenuComponent = action.payload;
     }
   },
 });
-
-export const { toggleMenuVisible, setMenuComponent } = toggleMenuSlice.actions;
+export const { toggleMenuVisible,toggleMenuComp  } = toggleMenuSlice.actions;
 export default toggleMenuSlice.reducer;

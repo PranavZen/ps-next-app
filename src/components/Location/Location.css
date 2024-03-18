@@ -25,6 +25,7 @@
     line-height: 16px;
     height: 32px;
     cursor: pointer;
+    text-overflow: ellipsis;
   }
   .location span{
     text-overflow: ellipsis;

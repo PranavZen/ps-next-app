@@ -8,7 +8,6 @@ import Link from "next/link";
 import Location from "../Location/Location";
 
 function Header() {
-  
   const [isLeftMenuVisible, setLeftMenuVisible] = useState(false);
   const [leftMenuComponent, setLeftMenuComponent] = useState(null);
 

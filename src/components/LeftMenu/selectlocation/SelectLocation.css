@@ -45,13 +45,17 @@
     line-height: 50px;
     text-align: center;
     pointer-events: none;
-    color: #aaa;
     margin-top: -5px;
 }
 .searchBar .searchIcon svg{
     height: 20px;
     width: 20px;
 }
+.searchBar .searchIcon svg path{
+    fill: #aaa;
+}
+
+
 .searchBar .searchGo{
     position: absolute;
     right: 18px;

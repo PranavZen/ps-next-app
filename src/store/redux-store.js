@@ -1,7 +1,6 @@
+import { configureStore } from "@reduxjs/toolkit";
 import locSlice from "./slice/selectLocationSlice";
 import toggleMenuSlice from "./slice/toggleMenuSlice";
-
-const { configureStore } = require("@reduxjs/toolkit");
 
 const mainStore = configureStore({
   reducer: {

@@ -57,6 +57,9 @@
   color: black;
   font-size: 32px;
 }
+.next:hover, .previous:hover{
+  color: black;
+}
 .previous {
   padding-left: 30px;
   color: black;
