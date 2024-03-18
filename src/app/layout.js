@@ -1,9 +1,8 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
-import { OurStoreProvider } from "@/store/OurStoreContext";
-import './globals.css';
-import "../assets/css/bootstrap.min.css";
-
+import "./globals.css";
+import "../assets/css/bootstrap.min.css"; 
+import { ProviderFunc } from "@/store/ProviderFunc";
 
 export const metadata = {
   title: "Punjabsind | Next App",
@@ -14,11 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <OurStoreProvider>
+        <ProviderFunc>
           <Header />
           {children}
           <Footer />
-        </OurStoreProvider>
+        </ProviderFunc>
       </body>
     </html>
   );

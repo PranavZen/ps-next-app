@@ -1,17 +1,17 @@
 import React, { useState, useRef } from "react";
-import CommonLayout from "../CommonLayout";
 import "./SelectLocation.css";
 import { IoCloseSharp, IoSearchSharp, IoArrowForward } from "react-icons/io5";
 import Image from "next/image";
 import LocationPin from "../../../assets/location.svg";
 import shopDetails from "../../Data/storeAddress";
-import { useOurStore } from "@/store/OurStoreContext";
+import { LocActions } from "@/store/actions/locationActions";
+
 
 function SelectLocation() {
   const [searchResults, setSearchResults] = useState([]);
   const [isInputEmpty, setIsInputEmpty] = useState(true);
   const searchRef = useRef(null);
-  const { setSelectedStore } = useOurStore();
+  const { setLocationName } = LocActions();
 
   const handleSearch = () => {
     const query = searchRef.current.value.trim().toLowerCase();
@@ -86,7 +86,7 @@ function SelectLocation() {
           <div
             className="resultDiv"
             key={index}
-            onClick={() => setSelectedStore(shop.name.toUpperCase())}
+            onClick={() => setLocationName(shop.name)}
           >
             <p className="resultTitle">{shop.name}</p>
             <p className="resultAddress">{shop.address}</p>

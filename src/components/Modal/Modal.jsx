@@ -1,12 +1,12 @@
-'use client'
 import React, { useRef, useEffect, useState } from "react";
 import "../Modal/Modal.css";
-import { useOurStore } from "@/store/OurStoreContext";
+import { LocActions } from "@/store/actions/locationActions";
+
 
 function Modal({ onClose, item }) {
   const modalRef = useRef();
   const [showModal, setShowModal] = useState(false);
-  const { setSelectedStore } = useOurStore();
+  const { setLocationName } = LocActions()
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -27,10 +27,11 @@ function Modal({ onClose, item }) {
   }
 
   function handleSelectLocation() {
-    setSelectedStore(item.name.toUpperCase());
+    setLocationName(item.name);
     setShowModal(false);
-    window.scrollTo({ top: 0, behavior: "instant" });
+    window.scrollTo({ top: 0, behavior: "smooth", duration: 500 });
   }
+  
 
   useEffect(() => {
     window.addEventListener("mousedown", handleClickOutside);

@@ -1,14 +1,14 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import "../Header/Header.css";
 import logo from "../../assets/punjabsindnewLogo.png";
-import { useOurStore } from "@/store/OurStoreContext";
 import Image from "next/image";
 import LeftMenu from "../LeftMenu/LeftMenu";
 import Link from "next/link";
 import Location from "../Location/Location";
 
 function Header() {
+  
   const [isLeftMenuVisible, setLeftMenuVisible] = useState(false);
   const [leftMenuComponent, setLeftMenuComponent] = useState(null);
 
@@ -16,8 +16,6 @@ function Header() {
     setLeftMenuComponent(component);
     setLeftMenuVisible(!isLeftMenuVisible);
   };
-
-  const { selectedStore } = useOurStore();
 
   useEffect(() => {
     if (isLeftMenuVisible) {
