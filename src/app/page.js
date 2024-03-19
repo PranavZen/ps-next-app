@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import HomeSlider from "@/components/HomeSlider/HomeSlider";
 import Modal from "@/components/Modal/Modal";
 import OurShops from "@/components/OurShops/OurShops";
-import ShopSearchHeader from "@/components/ShopSearchHeader/ShopSearchHeader";
+import ShopSection from "@/components/ShopSection/ShopSection";
 
 export default function Home() {
   const [modalItem, setModalItem] = useState(null);
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <HomeSlider />
-      <ShopSearchHeader />
+      <ShopSection/>
       <OurShops openModal={openModal} />
       {modalItem && <Modal key={modalItem.id} onClose={closeModal} item={modalItem} />}
     </>
