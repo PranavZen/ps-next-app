@@ -76,7 +76,7 @@ function ShopSearchHeader() {
                     data-name="Path 178"
                     transform="translate(0 0.475)"
                     fill="none"
-                    stroke-miterlimit="10"
+                    strokeMiterlimit="10"
                   >
                     <path
                       d="M18.968,21.587H3.132L0,9.594H22.1Z"
@@ -96,9 +96,9 @@ function ShopSearchHeader() {
                     transform="translate(3.132 5.062)"
                     fill="none"
                     stroke="#333"
-                    stroke-linecap="round"
-                    stroke-miterlimit="10"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth="2"
                   />
                   <line
                     id="Line_16"
@@ -108,9 +108,9 @@ function ShopSearchHeader() {
                     transform="translate(14.269 5.062)"
                     fill="none"
                     stroke="#333"
-                    stroke-linecap="round"
-                    stroke-miterlimit="10"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth="2"
                   />
                   <path
                     id="Path_577"
@@ -119,8 +119,8 @@ function ShopSearchHeader() {
                     transform="translate(5.181 16.066)"
                     fill="none"
                     stroke="#333"
-                    stroke-linecap="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeWidth="2"
                   />
                 </g>
               </svg>

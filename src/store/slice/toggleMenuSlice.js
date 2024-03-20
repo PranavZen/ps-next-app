@@ -1,20 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+const { createSlice } = require("@reduxjs/toolkit");
 
-const toggleMenuSlice = createSlice({
-  name: "toggleMenu",
+const toggleSideMenuSlice = createSlice({
+  name: "toggleSideMenu",
   initialState: {
-    isLeftMenuVisible: false,
-    leftMenuComponent: null,
+    visibleComponent: false,
+    selectedComponent: null,
   },
   reducers: {
-    toggleMenuVisible(state) {
-      state.isLeftMenuVisible = !state.isLeftMenuVisible;
-      
+    setVisibility: (state) => {
+      return !visibleComponent;
     },
-    toggleMenuComp(state, action) {
-      state.leftMenuComponent = action.payload;
+    setSideComponent: (state,action) => {
+      return action.payload;
     }
-  },
+  }
 });
-export const { toggleMenuVisible,toggleMenuComp  } = toggleMenuSlice.actions;
-export default toggleMenuSlice.reducer;
+
+export const {setVisibility, setSideComponent} = toggleSideMenuSlice.actions;
+export default toggleSideMenuSlice;

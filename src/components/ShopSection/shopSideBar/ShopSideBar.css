@@ -7,9 +7,12 @@
     z-index: 9;
     border-right: 1px solid #fecb00;
     overflow-x: hidden;
-    overflow-y: auto;
     scrollbar-width: none;
     top: 85px;
+    left: 0px;
+    height: 100vh;
+    min-height: 800px;
+    overflow-y: auto;
 }
 ul{
     margin-bottom: 0;
@@ -32,15 +35,16 @@ ul{
     padding: 5px 0 5px;
     border-bottom: 1px solid #fdd700;
     width: 100%;
+    cursor: pointer;
 }
 .sideNavTabs li:hover{
     background-color: #fff2c9;
 }
-.sideNavTabs li.active{
+.sideNavTabs li.open{
     background-color: #fff2c9;
     font-weight: 600;
 }
-.sideNavTabs li.active::after{
+.sideNavTabs li.open::after{
     content: "";
     height: 100%;
     width: 15px;
@@ -50,6 +54,7 @@ ul{
     top: 0;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+   
 }
 
 .sideNavTabs li span{
@@ -65,8 +70,9 @@ ul{
     padding-left: 15px;
     font-weight: 600;
 }
-.sideNavTabs li.active span{
+.sideNavTabs li.open span{
     font-weight: 900;
+   
 }
 .sideNavTabs .sideIMG{
     height: 38px;
@@ -74,4 +80,10 @@ ul{
     border-radius: 12px;
     overflow: hidden;
     background-color: rgb(248, 248, 248);
+    padding-left: 0;
 }
+.sideNavTabs .sideIMG img{
+    height: 100%;
+    width: 100%;
+}
+

@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import locSlice from "./slice/selectLocationSlice";
-import toggleMenuSlice from "./slice/toggleMenuSlice";
+import selectCategorySlice from "./slice/selectCategorySlice";
+import toggleSideMenuSlice from "./slice/toggleMenuSlice";
 
 const mainStore = configureStore({
   reducer: {
     location: locSlice.reducer,
-    sidemenu: toggleMenuSlice.reducer,
+    selectCategory: selectCategorySlice.reducer,
+    sidemenu: toggleSideMenuSlice.reducer,
   },
 });
 

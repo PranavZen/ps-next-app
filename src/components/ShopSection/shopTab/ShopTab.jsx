@@ -1,25 +1,29 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './ShopTab.css';
 import Image from 'next/image';
 import dummyProducts from '@/components/Data/dummyProducts';
 
 function ShopTab() {
-  const sweetProducts = dummyProducts.categories.find(category => category.category_title === 'Sweets').products;
+  const selectedCategory = useSelector(state => state.selectCategory);
+
+ 
+  const categoryProducts = dummyProducts.categories.find(category => category.category_title === selectedCategory)?.products || [];
 
   return (
     <div className='shopContentWrap'>
       <div className="tabContent">
         <div className="tabPane">
           <div className="productsWrap">
-            <h3>SWEETS <span>({sweetProducts.length})</span></h3>
+            <h3>{selectedCategory.toUpperCase()} <span>({categoryProducts.length})</span></h3>
             <div className="categoryProductsWrap">
-              {sweetProducts.map(product => (
+              {categoryProducts.map(product => (
                 <div key={product.product_id} className="singleProductContainer">
                   <div className="productBody">
                     <div className="productContent">
                       <div className="productImgContainer">
                         <div className="productImg">
-                          <Image src={product.img} alt={product.title} width={235} height={190}  />
+                          <Image src={product.img} alt={product.title} width={135} height={90}  />
                         </div>
                       </div>
                       <div className="productDescWrap">
