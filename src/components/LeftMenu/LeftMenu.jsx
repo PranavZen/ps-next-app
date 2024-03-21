@@ -3,11 +3,15 @@ import CommonLayout from "./CommonLayout";
 import SideMenuNav from "./sidemenu/SideMenuNav";
 import SelectLocation from "./selectlocation/SelectLocation";
 import LoginSideBar from "./loginSideBar/LoginSideBar";
+import { useSelector } from "react-redux";
 
-function LeftMenu({ toggleLeftMenu, leftMenuComponent }) {
+function LeftMenu() {
+
+  const {selectedComponent} = useSelector(store => store.sidemenu)
+
   let componentToRender;
 
-  switch (leftMenuComponent) {
+  switch (selectedComponent) {
     case "SideMenuNav":
       componentToRender = <SideMenuNav />;
       break;
@@ -21,7 +25,7 @@ function LeftMenu({ toggleLeftMenu, leftMenuComponent }) {
       componentToRender = null;
   }
 
-  return <CommonLayout toggleLeftMenu={toggleLeftMenu}>{componentToRender}</CommonLayout>;
+  return <CommonLayout >{componentToRender}</CommonLayout>;
 }
 
 export default LeftMenu;

@@ -8,13 +8,14 @@ const toggleSideMenuSlice = createSlice({
   },
   reducers: {
     setVisibility: (state) => {
-      return !visibleComponent;
+      state.visibleComponent = !state.visibleComponent;
     },
-    setSideComponent: (state,action) => {
-      return action.payload;
-    }
-  }
+    setSideComponent: (state, action) => {
+      state.selectedComponent = action.payload;
+    },
+  },
 });
+
 
 export const {setVisibility, setSideComponent} = toggleSideMenuSlice.actions;
 export default toggleSideMenuSlice;

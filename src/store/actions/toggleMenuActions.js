@@ -8,6 +8,7 @@ export function toggleMenuActions() {
         dispatch(setVisibility());
         dispatch(setSideComponent(sideComp));
     }
+    
 
     return {toggleMenu};
 }

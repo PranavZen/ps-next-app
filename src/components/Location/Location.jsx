@@ -2,13 +2,15 @@
 import React from 'react';
 import './Location.css';
 import { useSelector } from 'react-redux';
+import { toggleMenuActions } from '@/store/actions/toggleMenuActions';
 
-function Location({ toggleLeftMenu }) {
+function Location() {
   const { selectedStore } = useSelector(store => store.location);
+  const {toggleMenu} = toggleMenuActions();
 
 
   return (
-    <div className="location" onClick={() => toggleLeftMenu("SelectLocation")}>
+    <div className="location" onClick={() => toggleMenu("SelectLocation")}>
       <button></button>
       <span className="locSpan">
         <span>

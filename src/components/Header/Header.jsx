@@ -1,23 +1,20 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../Header/Header.css";
 import logo from "../../assets/punjabsindnewLogo.png";
 import Image from "next/image";
 import LeftMenu from "../LeftMenu/LeftMenu";
 import Link from "next/link";
 import Location from "../Location/Location";
+import { useSelector } from "react-redux";
+import { toggleMenuActions } from "@/store/actions/toggleMenuActions";
 
 function Header() {
-  const [isLeftMenuVisible, setLeftMenuVisible] = useState(false);
-  const [leftMenuComponent, setLeftMenuComponent] = useState(null);
-
-  const toggleLeftMenu = (component) => {
-    setLeftMenuComponent(component);
-    setLeftMenuVisible(!isLeftMenuVisible);
-  };
+  const { visibleComponent } = useSelector((store) => store.sidemenu);
+  const { toggleMenu } = toggleMenuActions();
 
   useEffect(() => {
-    if (isLeftMenuVisible) {
+    if (visibleComponent) {
       document.body.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("overflow-hidden");
@@ -26,7 +23,7 @@ function Header() {
     return () => {
       document.body.classList.remove("overflow-hidden");
     };
-  }, [isLeftMenuVisible]);
+  }, [visibleComponent]);
 
   return (
     <header>
@@ -42,26 +39,18 @@ function Header() {
             />
           </Link>
         </div>
-        <div
-          className="navigation"
-          onClick={() => toggleLeftMenu("SideMenuNav")}
-        >
+        <div className="navigation" onClick={() => toggleMenu("SideMenuNav")}>
           <span>
             <span className="top"></span>
             <span className="middle"></span>
             <span className="bottom"></span>
           </span>
         </div>
-        {isLeftMenuVisible && (
-          <LeftMenu
-            toggleLeftMenu={toggleLeftMenu}
-            leftMenuComponent={leftMenuComponent}
-          />
-        )}
-        <div className="login" onClick={() => toggleLeftMenu("LoginSideBar")}>
+        {visibleComponent && <LeftMenu />}
+        <div className="login" onClick={() => toggleMenu("LoginSideBar")}>
           <span>LOGIN</span>
         </div>
-        <Location toggleLeftMenu={toggleLeftMenu} />
+        <Location />
         <div className="floatRight">
           <div className="about">
             <a href="#">About Us</a>

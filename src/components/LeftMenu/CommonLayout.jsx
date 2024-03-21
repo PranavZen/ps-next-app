@@ -1,12 +1,21 @@
 import React from "react";
 import "./LeftMenu.css";
 import { IoClose } from "react-icons/io5";
-function CommonLayout({ children, toggleLeftMenu }) {
+import { useDispatch } from "react-redux";
+import { setVisibility } from "@/store/slice/toggleMenuSlice"; 
+
+function CommonLayout({ children }) {
+  const dispatch = useDispatch();
+
+  const closeMenu = () => {
+    dispatch(setVisibility());
+  };
+
   return (
     <div className="leftMenu">
       <div className="navMain">
         <div className="topBar">
-          <button onClick={toggleLeftMenu}>
+          <button onClick={closeMenu}>
             <IoClose />
           </button>
         </div>
