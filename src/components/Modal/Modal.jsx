@@ -1,13 +1,15 @@
+'use client'
 import React, { useRef, useEffect, useState } from "react";
 import "../Modal/Modal.css";
 import { LocActions } from "@/store/actions/locationActions";
+import { shopModalActions } from "@/store/actions/shopModalActions";
 
 
-function Modal({ onClose, item }) {
+function Modal({ item }) {
   const modalRef = useRef();
   const [showModal, setShowModal] = useState(false);
   const { setLocationName } = LocActions()
-
+  const { closeModal } = shopModalActions(); 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true);
@@ -43,11 +45,11 @@ function Modal({ onClose, item }) {
   useEffect(() => {
     if (!showModal) {
       const timer = setTimeout(() => {
-        onClose();
+        closeModal();
       }, 200);
       return () => clearTimeout(timer);
     }
-  }, [showModal, onClose]);
+  }, [showModal, closeModal]);
 
   return (
     <div className={`modalBG ${showModal ? "show" : ""}`}>

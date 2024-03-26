@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 import './ShopTab.css';
 import Image from 'next/image';
 import dummyProducts from '@/components/Data/dummyProducts';
+import { productModalActions } from '@/store/actions/productModalActions';
 
 function ShopTab() {
   const selectedCategory = useSelector(state => state.selectCategory);
-
- 
   const categoryProducts = dummyProducts.categories.find(category => category.category_title === selectedCategory)?.products || [];
+  const { toggleProductModal } = productModalActions();
 
   return (
     <div className='shopContentWrap'>
@@ -34,7 +34,7 @@ function ShopTab() {
                           <h5>
                             &#8377; {product.price} /-
                           </h5>
-                          <span className='productModalBtn'></span>
+                          <span className='productModalBtn' onClick={toggleProductModal} ></span>
                         </div>
                       </div>
                     </div>

@@ -26,21 +26,21 @@ function PopUpModal() {
   return (
     <>
       {isOpen && (
-        <div className={!isOpen ? "popUpModalBG" : 'popUpModalBG animes'}>
-          <div className="popUpModalBody">
-            <div className="popUpModalContent">
-              <div className="popUpModalCloseBtn">
+        <div className={!isOpen ? "popUpModalBG" : 'popUpModalBG customAnimes'}>
+          <div className="popUpModalBody customPopUpModalBody">
+            <div className="popUpModalContent customPopUpModalContent">
+              <div className="popUpModalCloseBtn customPopUpModalCloseBtn">
                 <button onClick={handleClose}>
                   <IoCloseSharp />
                 </button>
               </div>
-              <div className="popUpVideo">
-                <video id="vid" autoPlay muted loop playsInline>
+              <div className="popUpVideo customPopUpVideo">
+                {/* <video id="vid" autoPlay muted loop playsInline>
                   <source
-                    src={require("../Assets/ps-vid-11.mp4")}
+                    src="/ps-vid-11.mp4"
                     type="video/mp4"
                   />
-                </video>
+                </video> */}
               </div>
             </div>
           </div>

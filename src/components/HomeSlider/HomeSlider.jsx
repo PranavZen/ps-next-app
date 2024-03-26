@@ -8,6 +8,7 @@ import Image from "next/image";
 
 function HomeSlider() {
   const [currIndex, setIndex] = useState(0);
+  const [dragStart, setDragStart] = useState(0);
 
   const slides = [slide1, slide2];
 
@@ -19,19 +20,44 @@ function HomeSlider() {
     setIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
   };
 
+  const handleDragStart = (event) => {
+    setDragStart(event.pageX || event.touches[0].pageX);
+  };
+
+  const handleDragEnd = (event) => {
+    const dragEnd = event.pageX || event.changedTouches[0].pageX;
+    const diff = dragStart - dragEnd;
+    const threshold = 100; 
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        goToNextSlide();
+      } else {
+        goToPrevSlide();
+      }
+    }
+    setDragStart(0);
+  };
+
   useEffect(() => {
     const interval = setInterval(goToNextSlide, 8000);
     return () => {
-      clearInterval(interval); 
+      clearInterval(interval);
     };
   }, []);
 
   return (
-    <section className="bannerCarousel">
+    <section
+      className="bannerCarousel"
+      onTouchStart={handleDragStart}
+      onTouchEnd={handleDragEnd}
+      onMouseDown={handleDragStart}
+      onMouseUp={handleDragEnd}
+    >
       <div className="imageContainer">
         {slides.map((slide, index) => (
           <div key={index} className={index === currIndex ? "slide active" : "slide"}>
-            <Image src={slide} alt="Banner" width={1920} height={500}/>
+            <Image src={slide} alt="Banner" width={1920} height={500} />
           </div>
         ))}
         <a className="previous" onClick={goToPrevSlide}>

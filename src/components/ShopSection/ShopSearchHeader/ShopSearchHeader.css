@@ -1,112 +1,224 @@
 .shopSearchHeader {
-    margin-top: 30px;
-    width: 100%;
-    height: 85px;
-    position: sticky;
-    top: 0px;
-    background-color: #fffefac7;
-    z-index: 99;
-    backdrop-filter: saturate(180%) blur(5px);
-  }
-  .headerContainer {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    padding: 0 40px;
-    margin: 0 20px;
-    padding-top: 5px;
-  }
-  .shopHeaderLogo img {
-    margin-top: 8px;
-  }
-  .headerIconSearch {
-    display: flex;
-  }
-  .shopHeaderLocation {
-    position: relative;
-    width: 70px;
-  }
-  .shopHeaderLocation .location {
-    top: 15px;
-    left: 25px;
-  }
-  .shopSearchWrap {
-    margin: 10px 0;
-    width: 50%;
-    position: absolute;
-    left: 30%;
-  }
-  .cartWrap {
-    margin: 25px 0px 0 0;
-    position: absolute;
-    right: -50px;
-    cursor: pointer;
-  }
-  .cart-count {
-    position: absolute;
-    right: -10px;
-    top: -7px;
-    width: 20px;
-    height: 20px;
-    line-height: 19px;
-    background: #fdd700;
-    color: #2c2c2c;
-    text-align: center;
-    font-weight: 900;
-    font-size: 16px;
-    border-radius: 100px;
-  }
-  
-  /* Add fade-in and fade-out transition for the search body */
-  .searchBody {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1000000;
-    transition: opacity 0.5s ease;
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  .searchBody.open {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
-  .searchContainer {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    top: 0;
-    height: 100vh;
-    background: #fff;
-    border-radius: 0;
-    text-align: center;
-    overflow-y: auto;
-  }
-  .searchBodyClose {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 30px;
-    height: 30px;
-    z-index: 99;
-    cursor: pointer;
-  }
-  .searchContainerBody .row:nth-child(1) {
-    justify-content: center;
-  }
-  .searchContainerBody .headerShopInput span {
-    left: 50px;
-    top: 7px;
-  }
-  
-
-.searchContainerBody .headerShopInput input{
-    box-shadow: rgb(0 0 0 / 5%) 0px 10px 20px 0px;
-    height: 70px ;
+  margin-top: 30px;
+  width: 100%;
+  height: 85px;
+  position: sticky;
+  top: 0px;
+  background-color: #fffefac7;
+  z-index: 99;
+  backdrop-filter: saturate(180%) blur(5px);
+}
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 40px;
+  margin: 0 20px;
+  padding-top: 5px;
+}
+.shopHeaderLogo img {
+  margin-top: 8px;
+}
+.headerIconSearch {
+  display: flex;
+}
+.shopHeaderLocation {
+  position: relative;
+  width: 70px;
+}
+.shopHeaderLocation .location {
+  top: 15px;
+  left: 25px;
+}
+.shopSearchWrap {
+  margin: 10px 0;
+  width: 50%;
+  position: absolute;
+  left: 30%;
 }
 
-  
+
+.searchBody {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000000;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.searchBody.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.searchContainer {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  top: 0;
+  height: 100vh;
+  background: #fff;
+  border-radius: 0;
+  text-align: center;
+  overflow-y: auto;
+}
+.searchContainer::-webkit-scrollbar {
+  display: none;
+}
+.searchBodyClose {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  width: 30px;
+  height: 30px;
+  z-index: 99;
+  cursor: pointer;
+}
+.searchBodyClose svg {
+  height: 2em;
+  width: 2em;
+}
+
+
+
+.searchContainerBody .row:nth-child(1) {
+  justify-content: center;
+}
+.searchContainerBody .headerShopInput span {
+  left: 50px;
+  top: 7px;
+}
+
+.headerShopInput span svg{
+  height: 1.3em;
+  width: 1.3em;
+}
+
+.searchContainerBody .headerShopInput input {
+  box-shadow: rgb(0 0 0 / 5%) 0px 10px 20px 0px;
+  height: 70px;
+}
+
+.showResultTitle p {
+  color: #2c2c2c;
+  font-weight: 600;
+  font-size: 22px;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@keyframes zoomOut {
+  from {
+    opacity: 0;
+    transform: scale(0.5); 
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); 
+  }
+}
+
+.resultProduct{
+  width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0px 0px 10px 2px #eee;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    animation: zoomOut 0.5s ease forwards;
+}
+.resultProduct:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.resultProductImgDiv{
+  width: 100%;
+    height: 150px;
+    padding: 10px 0;
+    background: #fff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.resultProductImgDiv img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.resultDesc{
+  background: #ffffff;
+    padding: 20px;
+    text-align: left;
+    overflow: hidden;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.resultDescTitle{
+  color: #2c2c2c;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: calc(1* 0.06rem);
+    margin-bottom: 5px;
+}
+.resultQuantity{
+  appearance: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 0;
+    background-color: #fdd700;
+    /* padding-left: 15px; */
+    width: 85%;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+select {
+  background-image: url(../../../assets/select-down.svg);
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  padding-right: 40px !important;
+}
+.resultPriceCol{
+  border-top: 1px solid #fdd700;
+    display: flex;
+    align-items: center;
+    padding: 12px 0 0;
+    margin: 12px 0 0;
+    justify-content: space-between;
+}
+.resultPriceCol .resultPriceTag{
+  font-size: 19px;
+    font-weight: 600;
+    color: #2c2c2c;
+}
+.resultPriceCol .resultBasketIcon{
+  width: 30px;
+    height: 30px;
+    display: inline-block;
+    border: 1px solid #fdd700;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    background-size: 18px;
+    background: #fdd700 url(../../../assets/basket.svg) center center no-repeat;
+    position: relative;
+}
+

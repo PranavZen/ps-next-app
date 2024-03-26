@@ -1,0 +1,20 @@
+.cartWrap {
+    margin: 25px 0px 0 0;
+    position: absolute;
+    right: -50px;
+    cursor: pointer;
+  }
+  .cart-count {
+    position: absolute;
+    right: -10px;
+    top: -7px;
+    width: 20px;
+    height: 20px;
+    line-height: 19px;
+    background: #fdd700;
+    color: #2c2c2c;
+    text-align: center;
+    font-weight: 900;
+    font-size: 16px;
+    border-radius: 100px;
+  }

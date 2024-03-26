@@ -1,8 +1,11 @@
 import React from "react";
 import shopDetails from "../Data/storeAddress";
 import "../OurShops/OurShops.css";
+import { shopModalActions } from "@/store/actions/shopModalActions";
 
-const OurShops = ({ openModal }) => {
+const OurShops = () => {
+
+  const {openModal} = shopModalActions();
 
   return (
     <div className="ourShops">

@@ -1,7 +1,14 @@
+.bannerCarousel {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
 .imageContainer {
   max-width: 100%;
   position: relative;
   margin: auto;
+  transition: transform 0.5s ease;
 }
 
 .slide {
@@ -26,12 +33,16 @@
   animation-name: fadeIn;
 }
 @-webkit-keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
- }
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes fadeIn {
   0% {
-    opacity: 0;
+    opacity: 0.1;
   }
   100% {
     opacity: 1;
@@ -57,7 +68,8 @@
   color: black;
   font-size: 32px;
 }
-.next:hover, .previous:hover{
+.next:hover,
+.previous:hover {
   color: black;
 }
 .previous {
