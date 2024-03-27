@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
+import './ProductImageSlider.css';
 import ImageMagnifier from "./ImageMagnifier";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
-const Slider = ({ images }) => {
+const ProductImageSlider = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [startIndex, setStartIndex] = useState(0);
 
@@ -56,4 +57,4 @@ const Slider = ({ images }) => {
   );
 };
 
-export default Slider;
+export default ProductImageSlider;

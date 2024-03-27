@@ -24,6 +24,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.35s;
+  }
+  .footer .footerInfo .footerFlex ul li a svg{
+    transition: all 0.35s;
+  }
+  .footer .footerInfo .footerFlex ul li a svg:hover{
+    fill: black;
   }
   
   .footer .footerInfo .footerFlex ul li p {
@@ -53,9 +60,17 @@
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
   }
+
+  .footer .footerInfo .footerFlex ul li a span{
+    transition: all 0.35s;
+  }
   
   .footerPages {
     margin-left: 0 !important;
+  }
+
+  .footer .footerInfo .footerFlex .footerPages li a span:hover{
+    color: black;
   }
   
   .footer .footerInfo .footerFlex h6 {

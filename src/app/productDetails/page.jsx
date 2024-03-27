@@ -1,10 +1,9 @@
-import Slider from "@/components/syncslider/Slider";
 import '../productDetails/productdetails.css'
-import "../../components/syncslider/slider.css";
 import React from "react";
 import Link from "next/link";
 import { HiOutlineChevronLeft, HiChevronRight } from "react-icons/hi";
 import ProductDataDisplay from "@/components/productcontent/ProductDataDisplay";
+import ProductImageSlider from '@/components/syncslider/ProductImageSlider';
 const images = [
   {
     src: "https://media.istockphoto.com/id/1404885250/photo/mahabaleshwar-and-panchagani-nature-and-hill-areas.jpg?s=2048x2048&w=is&k=20&c=Su2wYszfDTThmt7AcCA5OHfGcqFVBxy73W-5YtemT28=",
@@ -58,7 +57,7 @@ function ProductDetails() {
         <div className="whiteWrap px-5 py-5">
           <div className="row">
             <div className="col-md-6">
-              <Slider images={images} />
+              <ProductImageSlider images={images} />
             </div>
             <div className="col-md-6">
               <ProductDataDisplay/>

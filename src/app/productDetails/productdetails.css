@@ -12,6 +12,9 @@
   font-weight: 600;
   color: #333;
 }
+.backBtn.btn{
+  box-shadow: none;
+}
 .backBtn span {
   display: flex;
   align-items: center;

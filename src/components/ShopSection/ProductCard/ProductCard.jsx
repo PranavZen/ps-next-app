@@ -6,6 +6,7 @@ import { productModalActions } from "@/store/actions/productModalActions";
 
 function ProductCard({product}) {
     const { openProductModal } = productModalActions();
+    
   return (
     <div key={product.product_id} className="singleProductContainer">
       <div className="productBody">

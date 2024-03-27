@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import './ProductImageSlider.css';
 
 const ImageMagnifier = ({ src, alt }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
