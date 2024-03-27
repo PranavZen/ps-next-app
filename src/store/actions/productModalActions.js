@@ -1,11 +1,15 @@
 import { useDispatch } from "react-redux";
-import { productModalVisibility } from "../slice/productModalSlice";
+import { productModalVisibilityTrue, productModalVisibilityFalse } from "../slice/productModalSlice";
 
 export function productModalActions() {
     const dispatch = useDispatch();
 
-    const toggleProductModal = () => {
-        dispatch(productModalVisibility());
+    const openProductModal = () => {
+        dispatch(productModalVisibilityTrue());
     }
-    return {toggleProductModal};
+    const closeProductModal = () => {
+        dispatch(productModalVisibilityFalse());
+    }
+    
+    return {openProductModal, closeProductModal};
 }

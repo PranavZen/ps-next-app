@@ -4,19 +4,11 @@ import "../Modal/Modal.css";
 import { LocActions } from "@/store/actions/locationActions";
 import { shopModalActions } from "@/store/actions/shopModalActions";
 
-
 function Modal({ item }) {
   const modalRef = useRef();
   const [showModal, setShowModal] = useState(false);
   const { setLocationName } = LocActions()
   const { closeModal } = shopModalActions(); 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowModal(true);
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   function handleClickOutside(event) {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -34,12 +26,19 @@ function Modal({ item }) {
     window.scrollTo({ top: 0, behavior: "smooth", duration: 500 });
   }
   
-
   useEffect(() => {
     window.addEventListener("mousedown", handleClickOutside);
     return () => {
       window.removeEventListener("mousedown", handleClickOutside);
     };
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowModal(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -50,6 +49,18 @@ function Modal({ item }) {
       return () => clearTimeout(timer);
     }
   }, [showModal, closeModal]);
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [showModal]);
 
   return (
     <div className={`modalBG ${showModal ? "show" : ""}`}>

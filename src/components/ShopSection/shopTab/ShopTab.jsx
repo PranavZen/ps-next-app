@@ -8,7 +8,7 @@ import { productModalActions } from '@/store/actions/productModalActions';
 function ShopTab() {
   const selectedCategory = useSelector(state => state.selectCategory);
   const categoryProducts = dummyProducts.categories.find(category => category.category_title === selectedCategory)?.products || [];
-  const { toggleProductModal } = productModalActions();
+  const { openProductModal } = productModalActions();
 
   return (
     <div className='shopContentWrap'>
@@ -34,7 +34,7 @@ function ShopTab() {
                           <h5>
                             &#8377; {product.price} /-
                           </h5>
-                          <span className='productModalBtn' onClick={toggleProductModal} ></span>
+                          <span className='productModalBtn' onClick={openProductModal} ></span>
                         </div>
                       </div>
                     </div>

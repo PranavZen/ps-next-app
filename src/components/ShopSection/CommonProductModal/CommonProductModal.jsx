@@ -7,7 +7,7 @@ import { productModalActions } from "@/store/actions/productModalActions";
 
 function CommonProductModal() {
   const { productModalVisible } = useSelector((store) => store.productModal);
-  const { toggleProductModal } = productModalActions();
+  const { closeProductModal, openProductModal } = productModalActions();
   const productModalRef = useRef();
 
   function handleClickOutsidePM(event) {
@@ -15,7 +15,7 @@ function CommonProductModal() {
       productModalRef.current &&
       !productModalRef.current.contains(event.target)
     ) {
-      toggleProductModal();
+      closeProductModal();
     }
   }
 
@@ -27,22 +27,36 @@ function CommonProductModal() {
   }, []);
 
   useEffect(() => {
-    if (!productModalVisible) {
-      const timer = setTimeout(() => {
-        closeModal();
-      }, 200);
-      return () => clearTimeout(timer);
+    if (productModalVisible) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
     }
-  }, [productModalVisible, toggleProductModal]);
 
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [productModalVisible]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-        toggleProductModal();
-    }, 100);
+  // //close modal
+  // useEffect(() => {
+  //   if (!productModalVisible) {
+  //     const timer = setTimeout(() => {
+  //       closeProductModal();
+  //     }, 300);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [productModalVisible, closeProductModal]);
 
-    return () => clearTimeout(timer);
-  }, []);
+  // //open modal
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     openProductModal();
+  //   }, 200);
+
+  //   return () => clearTimeout(timer);
+  // }, []);
+
 
   return (
     <div className={`productModalBG ${productModalVisible ? "show" : ""}`}>
@@ -52,7 +66,7 @@ function CommonProductModal() {
       >
         <div className="productModalHeader">
           <h4 className="productModalTitle">Motichoor Ladoo</h4>
-          <button className="productModalClose" onClick={toggleProductModal}>
+          <button className="productModalClose" onClick={closeProductModal}>
             <IoClose />
           </button>
         </div>

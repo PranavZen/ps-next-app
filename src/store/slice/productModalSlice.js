@@ -6,13 +6,16 @@ const productModalSlice = createSlice({
     productModalVisible: false,
   },
   reducers: {
-    productModalVisibility: (state) => {
-      state.productModalVisible = !state.productModalVisible;
+    productModalVisibilityTrue: (state) => {
+      state.productModalVisible = true;
     },
+    productModalVisibilityFalse: (state) => {
+      state.productModalVisible = false;
+    },    
     
   },
 });
 
 
-export const {productModalVisibility} = productModalSlice.actions;
+export const {productModalVisibilityTrue,productModalVisibilityFalse } = productModalSlice.actions;
 export default productModalSlice;

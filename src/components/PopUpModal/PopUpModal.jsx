@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./PopUpModal.css";
 import { IoCloseSharp } from "react-icons/io5";
+import modalVideo from '../../assets/ps-vid-11.mp4'
 
 function PopUpModal() {
   const [isOpen, setIsOpen] = useState(true);
@@ -35,12 +36,12 @@ function PopUpModal() {
                 </button>
               </div>
               <div className="popUpVideo customPopUpVideo">
-                {/* <video id="vid" autoPlay muted loop playsInline>
+                <video id="vid" autoPlay muted loop playsInline>
                   <source
-                    src="/ps-vid-11.mp4"
+                    src={modalVideo}
                     type="video/mp4"
                   />
-                </video> */}
+                </video>
               </div>
             </div>
           </div>

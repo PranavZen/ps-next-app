@@ -14,7 +14,6 @@ export default function Home() {
   const {productModalVisible} = useSelector(store => store.productModal)
   return (
     <>
-      
       <HomeSlider />
       <ShopSection />
       { cartVisible && <SideCart/>}
