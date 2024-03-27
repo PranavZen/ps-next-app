@@ -37,7 +37,7 @@ function ProductDetails() {
     <section className="innerPage">
       <div className="container-fluid customWidth">
         <div className="breadCrumWrap">
-          <Link href="" className="backBtn btn">
+          <Link href="/" className="backBtn btn">
             <span>
             <HiOutlineChevronLeft />
             </span>
@@ -55,7 +55,7 @@ function ProductDetails() {
             <span>Khajoor Dry Fruit Barfi</span>
           </div>
         </div>
-        <div className="bg-light px-5 py-5">
+        <div className="whiteWrap px-5 py-5">
           <div className="row">
             <div className="col-md-6">
               <Slider images={images} />

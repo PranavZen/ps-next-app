@@ -64,9 +64,7 @@ outline: none;
 .nxtBtn svg path{
     fill: #fdd700;
 }
-.customWidth{
-    padding: 0 10%;
-}
+
 /* styles/magnifier.module.css */
 
 .magnifier {

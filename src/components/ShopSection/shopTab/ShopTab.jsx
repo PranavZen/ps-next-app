@@ -1,14 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './ShopTab.css';
-import Image from 'next/image';
 import dummyProducts from '@/components/Data/dummyProducts';
-import { productModalActions } from '@/store/actions/productModalActions';
+import ProductCard from '../ProductCard/ProductCard';
 
 function ShopTab() {
   const selectedCategory = useSelector(state => state.selectCategory);
   const categoryProducts = dummyProducts.categories.find(category => category.category_title === selectedCategory)?.products || [];
-  const { openProductModal } = productModalActions();
+ 
 
   return (
     <div className='shopContentWrap'>
@@ -18,28 +17,7 @@ function ShopTab() {
             <h3>{selectedCategory.toUpperCase()} <span>({categoryProducts.length})</span></h3>
             <div className="categoryProductsWrap">
               {categoryProducts.map(product => (
-                <div key={product.product_id} className="singleProductContainer">
-                  <div className="productBody">
-                    <div className="productContent">
-                      <div className="productImgContainer">
-                        <div className="productImg">
-                          <Image src={product.img} alt={product.title} width={135} height={90}  />
-                        </div>
-                      </div>
-                      <div className="productDescWrap">
-                        <span className="productTitle">
-                          {product.title}
-                        </span>
-                        <div className="productPriceDiv">
-                          <h5>
-                            &#8377; {product.price} /-
-                          </h5>
-                          <span className='productModalBtn' onClick={openProductModal} ></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ProductCard key={product.product_id} product={product} />
               ))}
             </div>
           </div>

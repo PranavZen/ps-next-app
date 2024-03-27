@@ -1,6 +1,11 @@
 import React from "react";
+import Image from 'next/image';
+import './ProductCard.css';
+import { productModalActions } from "@/store/actions/productModalActions";
 
-function ProductCard() {
+
+function ProductCard({product}) {
+    const { openProductModal } = productModalActions();
   return (
     <div key={product.product_id} className="singleProductContainer">
       <div className="productBody">
