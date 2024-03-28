@@ -96,7 +96,10 @@
 .productModalBtn{
     width: 30px;
     height: 30px ;
-    border: 1px solid #fdd700;
+    background-color: #fcd600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 100px;
     cursor: pointer;
 }

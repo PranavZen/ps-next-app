@@ -1,9 +1,15 @@
-import '../productDetails/productdetails.css'
+"use client";
+import "./productdetails.css";
 import React from "react";
-import Link from "next/link";
 import { HiOutlineChevronLeft, HiChevronRight } from "react-icons/hi";
 import ProductDataDisplay from "@/components/productcontent/ProductDataDisplay";
-import ProductImageSlider from '@/components/syncslider/ProductImageSlider';
+import ProductImageSlider from "@/components/syncslider/ProductImageSlider";
+import dummyProducts from "@/components/Data/dummyProducts";
+import YouMayLikeSlider from "@/components/youmaylike/YouMayLikeSlider";
+import CommonProductModal from "@/components/ShopSection/CommonProductModal/CommonProductModal";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+
 const images = [
   {
     src: "https://media.istockphoto.com/id/1404885250/photo/mahabaleshwar-and-panchagani-nature-and-hill-areas.jpg?s=2048x2048&w=is&k=20&c=Su2wYszfDTThmt7AcCA5OHfGcqFVBxy73W-5YtemT28=",
@@ -31,27 +37,67 @@ const images = [
   },
 ];
 
-function ProductDetails() {
+function ProductDetails({ params }) {
+
+  const formattedSlug = params.slug.replace(/%20/g, " ");
+  const category = findCategoryBySlug(formattedSlug);
+
+  const productToDisplay = findProductByNameAndCategory(
+    formattedSlug,
+    category
+  );
+
+  function findCategoryBySlug(formattedSlug) {
+    for (const category of dummyProducts.categories) {
+      for (const product of category.products) {
+        if (product.title === formattedSlug) {
+          return category.category_title;
+        }
+      }
+    }
+    return "Category not found";
+  }
+  
+  function findProductByNameAndCategory(formattedSlug, category) {
+    const foundCategory = dummyProducts.categories.find(
+      (cat) => cat.category_title === category
+    );
+    if (foundCategory) {
+      const foundProduct = foundCategory.products.find(
+        (product) => product.title === formattedSlug
+      );
+      if (foundProduct) {
+        return foundProduct;
+      }
+    }
+    return null;
+  }
+
+  const { productModalVisible } = useSelector((store) => store.productModal);
+
+  const router = useRouter();
+
   return (
     <section className="innerPage">
+      {productModalVisible && <CommonProductModal />}
       <div className="container-fluid customWidth">
         <div className="breadCrumWrap">
-          <Link href="/" className="backBtn btn">
+          <button className="backBtn btn" onClick={() => { router.back()}} >
             <span>
-            <HiOutlineChevronLeft />
+              <HiOutlineChevronLeft />
             </span>
             Back
-          </Link>
+          </button>
           <div className="pagePathWrap">
             <span>Home</span>
             <span>
               <HiChevronRight />
             </span>
-            <span>Sweets</span>
+            <span>{category}</span>
             <span>
               <HiChevronRight />
             </span>
-            <span>Khajoor Dry Fruit Barfi</span>
+            <span>{formattedSlug}</span>
           </div>
         </div>
         <div className="whiteWrap px-5 py-5">
@@ -60,12 +106,12 @@ function ProductDetails() {
               <ProductImageSlider images={images} />
             </div>
             <div className="col-md-6">
-              <ProductDataDisplay/>
+              <ProductDataDisplay productData={productToDisplay} />
             </div>
           </div>
         </div>
+        <YouMayLikeSlider />
       </div>
-      
     </section>
   );
 }
